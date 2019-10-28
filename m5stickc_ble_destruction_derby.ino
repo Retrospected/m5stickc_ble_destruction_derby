@@ -33,8 +33,8 @@ bool connectToServer() {
   BLEClient*  pClient  = BLEDevice::createClient();
 
   M5.Lcd.fillScreen(BLACK);
-  M5.Lcd.setCursor(7,3,1);
-  M5.Lcd.println("Connecting");
+  M5.Lcd.setCursor(1,3,1);
+  M5.Lcd.println("Connecting:");
   M5.Lcd.println(myDevice->getName().c_str());
   
   pClient->connect(myDevice);
@@ -74,7 +74,7 @@ bool connectToServer() {
       Serial.print(spamValue);
       Serial.println("\"");
       i->second->writeValue(spamValue.c_str());
-      M5.Lcd.println("Write succesfull");
+      M5.Lcd.println("Write success");
     }
   }
   Serial.println("Done!");
@@ -117,10 +117,10 @@ void setup() {
   M5.begin();
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setTextColor(GREEN, BLACK);
-  M5.Lcd.setCursor(7,3,1);
-  M5.Lcd.println("DESTRUCTION");
-  M5.Lcd.println("   DERBY   ");
-  M5.Lcd.println("  STARTED  ");
+  M5.Lcd.setCursor(1,60,1);
+  M5.Lcd.println(" DESTRUCTION");
+  M5.Lcd.println("    DERBY   ");
+  M5.Lcd.println("   STARTED  ");
     
   BLEDevice::init("");
 
