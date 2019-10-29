@@ -70,10 +70,13 @@ bool connectToServer() {
     if (i->second->canWrite()){
       M5.Lcd.println();
       M5.Lcd.println("Writable: Y");
+      M5.Lcd.println("Value:");
+      M5.Lcd.println(i->second->readValue().c_str());
       Serial.print("Writing out: \"");
       Serial.print(spamValue);
       Serial.println("\"");
       i->second->writeValue(spamValue.c_str());
+      M5.Lcd.println("");
       M5.Lcd.println("Write success");
     }
   }
